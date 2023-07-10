@@ -1,0 +1,61 @@
+@import "../../css-config/mixins.scss";
+
+.main-header{
+     width: 100%;
+     padding: 0 20px;
+     background-color: #03c4ff ;
+     color: #ffffff;
+     border-bottom: 2px solid rgba(3, 17, 71, 0.145);
+     z-index: 99;
+    .header-context{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+        .logo{
+           
+        }
+        .search-bar{
+            width: 300px;
+            background-color: #ffffff;
+            border: 1px solid rgba(2, 64, 121, 0.599);
+            color: #0030a9;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 25px;
+            cursor: pointer;
+            border-radius: 20px;
+            .search-div{
+                margin: 5px;
+                color:#0030a949;
+            }
+            .search-icon{
+                margin: 5px;
+                display: flex;
+                align-items: center;
+            }
+
+
+            
+        }
+        .right-div{
+            .right{
+             list-style-type: none;
+             display: flex;
+             justify-content: space-between;
+             gap:20px;
+
+                li{
+                  font-size: 14px;
+                  font-weight: 600;
+                  text-transform: uppercase;
+                  cursor: pointer;
+                }
+            }
+
+        }
+    }
+}

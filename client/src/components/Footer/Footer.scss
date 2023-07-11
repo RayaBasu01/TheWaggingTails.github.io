@@ -1,1 +1,74 @@
 @import "../../css-config/mixins.scss";
+
+
+.footer{
+    width: 100%;
+    .footer-content{
+        padding: 50px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: wrap;
+        gap: 20px;
+        @include md{
+            justify-content: space-between;
+            padding: 50px 0;
+        }
+
+        .col{
+            max-width: 300px;
+            .title{
+                margin-bottom: 20px;
+                font-size: 15px ;
+                color: #2d0049c0;
+            }
+            .text{
+                color: #1e022f7f;
+            }
+
+            .c-items{
+                display: flex;
+                margin-bottom: 10px;
+                svg{
+                    flex-shrink: 0;
+                    font-size: 14px;
+                    margin-right: 10px;
+                    margin-top:4px;
+                    color:#1e022f7f;
+                }
+            }
+            span{
+                &.text{
+                    display: block;
+                    margin-bottom: 10px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .bottom-bar{
+        border-top:1px solid rgba(0, 0, 0, 0.175);
+        .bottom-bar-content{
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            gap:10px;
+            .text{
+                font-size: 12px;
+                text-transform: uppercase;
+                color: rgba(26, 1, 51, 0.73);
+            }
+            @include md{
+                padding: 0;
+                height: 60px;
+                max-width: 1200px;
+                margin: 0 auto;
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+    }
+}

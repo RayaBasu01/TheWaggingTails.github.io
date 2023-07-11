@@ -15,12 +15,27 @@ import "./Header.scss";
 
 
 const Header = () => {
+
+    const [scrolled , setScrolled] =useState(false);
+
+    const handlescroll=()=>{
+        const offset=window.scrollY;
+        if(offset>200){
+            setScrolled(true);
+        }else{
+            setScrolled(false);
+        }
+    }
+    //react-hook
+    useEffect(()=>{
+         window.addEventListener("scroll",handlescroll)
+    },[]);
     return (
-            <header className="main-header">
+            <header className={`main-header ${scrolled? 'sticky-header' : ''}`}>
                     <div className="header-context">
-                        <div className="logo">The Wagging Tails</div>
+                        <div className="logo">TheWaggingTails</div>
                         <div className="search-bar">
-                            <div className="search-div">Search,discover </div>
+                            <div className="search-div">Search</div>
                             <div className="search-icon"><TbSearch/></div>
                         </div>
                         <div className="right-div">
@@ -28,7 +43,11 @@ const Header = () => {
                                 <li>About</li>
                                 <li>Categories</li>
                                 <li><AiOutlineHeart/></li>
-                                <li><span className="cart-icon"><CgShoppingCart/>Cart</span></li>
+                                <li>
+                                    <span className="cart-icon"><CgShoppingCart/>
+                                        <span>3</span>
+                                    </span>
+                                </li>
                             </ul>
                         </div>
                     </div>

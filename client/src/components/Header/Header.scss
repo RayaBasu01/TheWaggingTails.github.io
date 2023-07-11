@@ -1,12 +1,16 @@
 @import "../../css-config/mixins.scss";
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
 .main-header{
      width: 100%;
      padding: 0 20px;
-     background-color: #03c4ff ;
+     background-color: #b918f9 ;
      color: #ffffff;
      border-bottom: 2px solid rgba(3, 17, 71, 0.145);
      z-index: 99;
+     @include md{
+        padding: 0 40px;
+     }
     .header-context{
         display: flex;
         align-items: center;
@@ -14,11 +18,23 @@
         height: 50px;
         max-width: 1200px;
         margin: 0 auto;
+        gap:5px;
+        @include md{
+            height: 60px;
+        }
         .logo{
-           
+           font-size: 16px;
+           cursor: pointer;
+           font-weight: 700;
+           font-family: 'Dancing Script', cursive;
+           @include md{
+            font-size: 22px;
+           }
+
         }
         .search-bar{
             width: 300px;
+            min-width: 100px;
             background-color: #ffffff;
             border: 1px solid rgba(2, 64, 121, 0.599);
             color: #0030a9;
@@ -36,6 +52,9 @@
                 margin: 5px;
                 display: flex;
                 align-items: center;
+                svg{
+                    font-size: 20px;
+                }
             }
 
 
@@ -44,18 +63,58 @@
         .right-div{
             .right{
              list-style-type: none;
-             display: flex;
+             display: none;
              justify-content: space-between;
              gap:20px;
+             @include md{
+                display: flex;
+             }
 
                 li{
                   font-size: 14px;
                   font-weight: 600;
                   text-transform: uppercase;
                   cursor: pointer;
+                  svg{
+                    font-size: 22px;
+                    cursor: pointer;
+                  }
+                  .cart-icon{
+                    display: flex;
+                    position: relative;
+                    span{
+                        min-width: 20px;
+                        text-align: center;
+                        background-color: #06090d;
+                        color: #ffffff;
+                        padding: 2.5px;
+                        position: absolute;
+                        top:-6px;
+                        left: 15px;
+                        font-size: 12px;
+                        line-height: 1;
+                        border-radius: 10px;
+                    }
+                  }
                 }
             }
 
         }
+    }
+    &.sticky-header{
+        position: sticky;
+        top:0;
+        transform: translateY(-60px);
+        animation: stickyhead 0.5s ease forwards;
+    }
+}
+
+
+@keyframes stickyhead {
+    0%{
+        transform: translateY(-60px);
+    }
+    100%{
+        transform: translateY(0);
     }
 }

@@ -1,1 +1,10 @@
 @import "../../css-config/mixins.scss";
+
+.cart-panel{
+    .behind-layer{
+        .cart-content{
+            margin: 0;
+        }
+    }
+}
+

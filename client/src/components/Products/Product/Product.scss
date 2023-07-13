@@ -24,15 +24,15 @@
             height: 250px;
         }
         img{
-            height: 179px;
+            height: 178px;
             width: 100%;
             transition: all ease 0.3s;
             display: block;
             @include sm{
-                height: 209px;
+                height: 208px;
             }
             @include md{
-                height: 249px;
+                height: 248px;
             }
         }
     }

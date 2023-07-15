@@ -19,6 +19,7 @@ const CartItem = () => {
                     <span>3 </span>
                     <span> X </span>
                     <span> &#8377;499</span>
+                    
                 </div>
             </div>
         </div>

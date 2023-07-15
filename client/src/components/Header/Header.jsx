@@ -55,7 +55,7 @@ const Header = () => {
                         </div>
                     </div>
             </header>
-            {showCart && < Cart setshowCart={setshowCart}/>}
+            {showCart && <Cart setshowCart={setshowCart}/>}
         </>
             );
 };

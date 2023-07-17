@@ -12,7 +12,7 @@
         gap: 10px;
         .category-imgs{
             background-color: rgba(0, 0, 0, 0.288);
-            width: calc(33.33% - 5px);
+            width: calc(50% - 5px);
             cursor: pointer;
             overflow: hidden;
             @include md{

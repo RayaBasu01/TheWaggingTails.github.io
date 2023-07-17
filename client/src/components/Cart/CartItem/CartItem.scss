@@ -1,4 +1,94 @@
 .cart-product{
-    margin: 0 auto;
-    background-color: #f9f9f9;
+    flex-grow:1;
+
+
+    .cart-prod{
+        padding:20px 15px;
+        display: flex;
+        gap:10px;
+
+        .img-con{
+            border: 1px solid rgba(0, 0, 0, 0.064);
+            width: 60px;
+            height: 60px;
+            flex-shrink: 0;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+   
+        .product-dets{
+            overflow: hidden;
+            position: relative;
+            .name{
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                font-size: 16px;
+                line-height: 1;
+                margin-bottom: 10px;
+                font-weight: 600;
+                display:block;
+                padding-right: 25px;
+
+
+            }
+            svg{
+                position: absolute;
+                top:0;
+                right: 0;
+                cursor: pointer;
+            }
+            .close-btn{
+                border: 1px solid rgba(0, 0, 0, 0.214);
+            }
+            .quantity{
+                width: fit-content;
+                display: flex;
+                border: 1px solid rgba(0, 0, 0, 0.389);
+                margin-bottom: 8px;
+                height: 30px;
+
+                span{
+                    font-size: 14px ;
+                    width: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    color: #000000b0;
+                    &:nth-child(1){
+                        font-size: 18px;
+                        border-right: 1px solid rgba(0, 0, 0, 0.389);
+                    }
+                    &:nth-child(3){
+                        font-size: 18px;
+                        border-left: 1px solid rgba(0, 0, 0, 0.389);
+                    }
+                    &:nth-child(2){
+                        width: 40px;
+                    }
+                    
+                    
+                }   
+
+            }
+            .text{
+                display: flex;
+                align-items: center;
+                gap:5px;
+                font-size: 12px;
+                font-weight: 600;
+                .hl{
+                    color: #9f29d2;
+                }
+
+            }
+        }
+        &:hover{
+            background-color: #0000000f;
+        }
+    }
+    
 }

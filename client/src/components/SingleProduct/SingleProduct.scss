@@ -15,7 +15,7 @@
         .single-product-page{
             display: flex;
             flex-direction: column;
-            @include md{
+            @include lg{
                 flex-direction: row;
             }
             .left{
@@ -23,9 +23,10 @@
                 background-color: rgba(0, 0, 0, 0.04);
                 border: 1px solid rgba(0, 0, 0, 0.159);
                 flex-shrink: 0;
+                display: flex;
                 align-items: center;
                 justify-content: center;
-                @include md{
+                @include lg{
                     width: 600px;
                     height: 600px;
                 }
@@ -33,7 +34,7 @@
                     
                     width: 99.9%;
                     display: block;
-                    @include md{
+                    @include lg{
                         height: 598px;
                     }
                 }
@@ -84,12 +85,15 @@
 
                         span{
                             font-size: 18px ;
-                            width: 40px;
+                            width: 25px;
                             display: flex;
                             align-items: center;
                             justify-content: center;
                             cursor: pointer;
                             color: #000000b0;
+                            @include md{
+                                width: 40px;
+                            }
                             &:nth-child(1){
                                 border-right: 2px solid rgba(0, 0, 0, 0.389);
                             }
@@ -97,7 +101,10 @@
                                 border-left: 2px solid rgba(0, 0, 0, 0.389);
                             }
                             &:nth-child(2){
-                                width: 60px;
+                                width: 30px;
+                                @include md{
+                                    width: 60px;
+                                }
                             }
                             
                             
@@ -113,13 +120,14 @@
                           align-items:center;
                           justify-content: center;
                           cursor: pointer;
-                          font-size: 16px;
+                          font-size: 12px;
                           color:white;
                           background: #9913e2;
                           border-bottom: 3px solid  #570086;
                           flex-grow: 1;
                           @include md{
                             flex-grow: unset;
+                            font-size: 18px;
                           }
                     }
 

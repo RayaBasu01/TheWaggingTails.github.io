@@ -1,14 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import "./Product.scss";
-import prod1 from "../../../assets/products/food-1.webp"
-const Product = () => {
+
+const Product = ({id ,data}) => {
+    const navigate= useNavigate();
     return (
-        <div className="product-card">
+        <div className="product-card" onClick={()=> navigate("/product/"+id) }>
             <div className="thumbnail">
-                <img src={prod1} alt="" />
+                <img src={process.env.REACT_APP_URL + data.img.data[0].attributes.url } alt="" />
             </div>
             <div className="product-details">
-                <div className="product-name">Product</div>
-                <div className="product-price"> &#8377; 499</div>
+                <div className="product-name">{data.title}</div>
+                <div className="product-price"> &#8377; {data.price}</div>
             </div>
         </div>
     );

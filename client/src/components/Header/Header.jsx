@@ -19,6 +19,8 @@ const Header = () => {
     const [scrolled , setScrolled] =useState(false);
     const [showCart , setshowCart] =useState(false);
     const [showSearch , setshowSearch] =useState(false);
+    const {cartCount} = useContext(Context)
+    const navigate= useNavigate();
 
     const handlescroll=()=>{
         const offset=window.scrollY;
@@ -36,7 +38,7 @@ const Header = () => {
         <>
             <header className={`main-header ${scrolled? 'sticky-header' : ''}`}>
                     <div className="header-context">
-                        <div className="logo">TheWaggingTails</div>
+                        <div className="logo" onClick={()=> navigate("/")}>TheWaggingTails</div>
                         <div className="search-bar" onClick={()=> setshowSearch(true)}>
                             <div className="search-div">Search</div>
                             <div className="search-icon"><TbSearch/></div>
@@ -51,7 +53,7 @@ const Header = () => {
                                 <li>
                                     <span className="cart-icon" onClick={()=> setshowCart(true)}>
                                         <CgShoppingCart/>
-                                        <span>3</span>
+                                       {!!cartCount && <span>{cartCount}</span>}
                                     </span>
                                 </li>
                             </ul>

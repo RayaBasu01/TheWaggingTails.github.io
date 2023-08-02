@@ -34,9 +34,8 @@
                     
                     width: 99.9%;
                     display: block;
-                    @include lg{
-                        height: 598px;
-                    }
+                    height: 100%;
+                    object-fit: contain;
                 }
             }
             .right{

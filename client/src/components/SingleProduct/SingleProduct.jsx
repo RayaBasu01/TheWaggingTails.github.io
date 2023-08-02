@@ -1,6 +1,7 @@
 import "./SingleProduct.scss";
 import React from "react";
-import prod1 from "../../assets/products/food-1.webp"
+import { useState , useContext } from "react";
+
 import RelatedProducts from "./RelatedProducts/RelatedProducts"
 import {
     FaFacebookF,
@@ -10,31 +11,56 @@ import {
     FaPinterest,
     FaCartPlus,
 } from "react-icons/fa" ;
+ import useFetch from "../../hooks/fetch";
+ import { useParams } from "react-router-dom";
+import { Context } from "../../utils/context";
 const SingleProduct = () => {
+    const [quantity,setQuantity] = useState(1);
+    const {id} = useParams();
+    const {data} =useFetch(`/api/products?populate=*&[filters][id]=${id}`);
+
+    const {handleAddToCart} = useContext(Context);
+
+    const increment=()=>{
+        setQuantity((prevState) => prevState + 1);
+    }
+    const decrement=()=>{
+        setQuantity((prevState) => {
+             if(prevState > 1){  
+                return (prevState - 1);
+             }
+             else{
+                return 1;
+             }
+        });
+    }
+
+    if(!data) return;
+
+    const product = data.data[0].attributes;
+
     return (
         <div className="single-product-main-content">
             <div className="layout">
                 <div className="single-product-page">
                     <div className="left">
-                        <img src={prod1} alt="" />
+                        <img src={process.env.REACT_APP_URL + product.img.data[0].attributes.url} alt="" />
                     </div>
                     <div className="right">
-                        <div className="name">Product Name</div>
-                        <div className="price">&#8377; 499</div>
-                        <div className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Voluptate dolorum omnis autem pariatur consectetur reiciendis saepe ullam? 
-                        Vel vero excepturi officia expedita soluta esse mollitia. 
-                        Ipsa suscipit quidem atque animi laudantium expedita dolor? 
-                        Unde dolores nostrum accusantium odio perspiciatis tenetur natus! Similique quas 
-                        nobis esse hic? Blanditiis quaerat eos suscipit.
+                        <div className="name">{product.title}</div>
+                        <div className="price">&#8377; {product.price}</div>
+                        <div className="description">{product.desc}
                         </div>
                         <div className="cart-buttons">
                             <div className="quantity">
-                                <span>-</span>
-                                <span>1</span>
-                                <span>+</span>
+                                <span onClick={decrement}>-</span>
+                                <span>{quantity}</span>
+                                <span onClick={increment}>+</span>
                             </div>
-                            <button>
+                            <button onClick={()=>{
+                                handleAddToCart( data.data[0] , quantity)
+                                setQuantity(1)
+                            }}>
                                 <FaCartPlus size={20}/>
                                 ADD TO CART
                             </button>
@@ -43,8 +69,8 @@ const SingleProduct = () => {
                         <span className="divider"/>
 
                         <div className="info-item">
-                            <span className="text-bold">Category :
-                                <span>Dog Food</span>
+                            <span className="text-bold">Category :{' '}
+                                <span>{product.categories.data[0].attributes.title}</span>
                             </span>
                             <span className="text-bold">Share on :
                                 <span className="social-icons">
@@ -58,7 +84,7 @@ const SingleProduct = () => {
                         </div>
                     </div>
                 </div>
-                <RelatedProducts/>
+                <RelatedProducts productId={id} categoryId={product.categories.data[0].id}/>
             </div>
         </div>
     );

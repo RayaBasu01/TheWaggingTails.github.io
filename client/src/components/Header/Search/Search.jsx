@@ -1,5 +1,6 @@
 import "./Search.scss";
 import {MdClose} from "react-icons/md";
+import{TbSearch} from "react-icons/tb";
 import prod1 from "../../../assets/products/food-1.webp";
 import { useState } from "react";
 import {useNavigate} from "react-router-dom";
@@ -21,7 +22,8 @@ const Search = ({setshowSearch}) => {
     return (
         <div className="search-modal">
             <div className="form-field">
-                <input type="text" autoFocus placeholder="Search Products" value={query} onChange={onChange}/>
+                <TbSearch className="search-ic"/>
+                <input type="text" autoFocus placeholder= "Search Products" value={query} onChange={onChange}/>
                 <MdClose className="close-btn" onClick={()=>setshowSearch(false)}/>
             </div>
 

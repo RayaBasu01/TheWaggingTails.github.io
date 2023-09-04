@@ -10,7 +10,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { makePayment } from "../../utils/api";
 
 
-const Cart = ({ setshowCart }) => {
+const Cart = ({ setshowCart ,setHiddenScroll }) => {
     const { cartItems, cartSubTotal } = useContext(Context);
     const navigate = useNavigate();
     const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);

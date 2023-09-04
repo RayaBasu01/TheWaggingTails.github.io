@@ -19,7 +19,7 @@ const Header = () => {
     const [scrolled , setScrolled] =useState(false);
     const [showCart , setshowCart] =useState(false);
     const [showSearch , setshowSearch] =useState(false);
-    const {cartCount} = useContext(Context)
+    const {cartCount} = useContext(Context);
     const navigate= useNavigate();
 
     const handlescroll=()=>{
@@ -30,12 +30,14 @@ const Header = () => {
             setScrolled(false);
         }
     }
+
     //react-hook
     useEffect(()=>{
          window.addEventListener("scroll",handlescroll)
     },[]);
     return (
         <>
+        
             <header className={`main-header ${scrolled? 'sticky-header' : ''}`}>
                     <div className="header-context">
                         <div className="logo" onClick={()=> navigate("/")}>TheWaggingTails</div>
@@ -45,8 +47,8 @@ const Header = () => {
                         </div>
                         <div className="right-div">
                             <ul className="right">
-                                <li>About</li>
-                                <li>Categories</li>
+                                <li onClick={()=> navigate("/")}>About</li>
+                                <li onClick={()=> navigate("/")}>Categories</li>
                                 <li><AiOutlineHeart/></li>
                             </ul>
                             <ul className="cart">
@@ -60,8 +62,8 @@ const Header = () => {
                         </div>
                     </div>
             </header>
-            {showCart && <Cart setshowCart={setshowCart}/>}
-            {showSearch && <Search setshowSearch={setshowSearch}/>}
+            {showCart && <Cart setshowCart={setshowCart} />}
+            {showSearch && <Search setshowSearch={setshowSearch} />}
             
         </>
             );

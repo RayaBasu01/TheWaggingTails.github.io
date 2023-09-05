@@ -71,6 +71,15 @@ During checkout to use the TEST MODE of Strapi Payment Gateway, you can use this
 
 **`NOTE: Dont use actual Debit/Credit Card value.`**
 
+## Demo
+![photo_2023-09-05_18-00-44](https://github.com/RayaBasu01/TheWaggingTails.github.io/assets/108759478/e44778c3-4c20-4037-b679-367b233ddaf5)
+![photo_2023-09-05_18-01-24](https://github.com/RayaBasu01/TheWaggingTails.github.io/assets/108759478/9414ccf4-8750-4f03-8566-76ac65de3540)
+![photo_2023-09-05_18-01-35](https://github.com/RayaBasu01/TheWaggingTails.github.io/assets/108759478/2eb93fdf-e62e-4f17-86c8-f185ef259a9c)
+![photo_2023-09-05_18-01-40](https://github.com/RayaBasu01/TheWaggingTails.github.io/assets/108759478/01fefc7e-8294-4df3-a2d7-180de2be680f)
+![photo_2023-09-05_18-01-29](https://github.com/RayaBasu01/TheWaggingTails.github.io/assets/108759478/3a6cf3fd-e69c-4b19-9663-42656e513ef2)
+
+
+
 ## Feedback
 
 If you have any feedback, please reach out to us at raya.basu.01@gmail.com
